@@ -1,6 +1,6 @@
 # ESG & Financial Performance — Advanced Analysis
 
-# Project members and roll numbers
+# Project members and Roll numbers
 
 Prateek Kumar Prasad -(2301420018)-Btech CSE DS sem IV
 Yatharth Chopra -(2301420022)-Btech CSE DS sem IV
