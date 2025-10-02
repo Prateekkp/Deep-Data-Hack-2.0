@@ -238,3 +238,12 @@ def wrapped_predict_proba(x_arr):
 - Add  more unit tests for data validation steps and a small integration test that runs the notebook pipeline on a tiny sample.
 
 ---
+## Working dashboard 
+<img width="1519" height="849" alt="image" src="https://github.com/user-attachments/assets/5ee9c5e0-3366-4f78-9893-b3ea59eb6730" />
+- After the Drop down Implented by respective feild 
+<img width="1523" height="854" alt="image" src="https://github.com/user-attachments/assets/05344870-02e0-459f-86a3-e57a9ed6ba6a" />
+ - After Filter
+<img width="1512" height="848" alt="image" src="https://github.com/user-attachments/assets/9ea304f5-9d00-4bfc-ad59-bc7a9f4f61e2" />
+
+
+
