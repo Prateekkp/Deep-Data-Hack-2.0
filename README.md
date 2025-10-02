@@ -1,6 +1,5 @@
 # ESG & Financial Performance — Advanced Analysis
 
----
 ## Working dashboard 
 <img width="1519" height="849" alt="image" src="https://github.com/user-attachments/assets/5ee9c5e0-3366-4f78-9893-b3ea59eb6730" />
 
