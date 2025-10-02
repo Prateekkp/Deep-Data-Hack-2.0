@@ -27,18 +27,18 @@ Below is an overall pipeline flow showing the major processing steps. Paste this
 
 ```mermaid
 flowchart TD
-  A[Raw CSV: company_esg_financial_dataset.csv] --> B[Quick Audit & Validation]
+  A[Raw CSV company_esg_financial_dataset.csv] --> B[Quick Audit and Validation]
   B --> C[Data Cleaning]
   C --> D[Feature Engineering]
   D --> E[Exploratory Data Analysis]
-  D --> F[Clustering (KMeans)]
-  D --> G[Modeling: RandomForest (ESG_Category)]
+  D --> F[Clustering KMeans]
+  D --> G[Modeling RandomForest ESG Category]
   G --> H[LIME Explanations]
-  E --> I[Visualizations & Insights]
+  E --> I[Visualizations and Insights]
   F --> I
   H --> I
-  I --> J[Profile Report (esg_profile_report.html)]
-  J --> K[Deliverables & Recommendations]
+  I --> J[Profile Report esg_profile_report.html]
+  J --> K[Deliverables and Recommendations]
 ```
 
 Notes:
@@ -55,9 +55,9 @@ Notes:
 Mermaid flow for audit:
 ```mermaid
 flowchart LR
-  A[Load CSV] --> B[.head() / .info() / .describe()]
-  B --> C[Null summary & duplicate check]
-  C --> D[Identify expected missing (e.g., first-year GrowthRate)]
+  A[Load CSV] --> B[head info describe]
+  B --> C[Null summary and duplicate check]
+  C --> D[Identify expected missing values such as first year GrowthRate]
 ```
 
 ### 2) Data Cleaning & Outlier Detection
@@ -67,11 +67,11 @@ flowchart LR
 Mermaid flow:
 ```mermaid
 flowchart LR
-  A[Detect Nulls] --> B[Check reason for nulls]
-  B --> C[Mark expected nulls (first year GrowthRate)]
-  A --> D[Outlier detection (IQR)]
-  D --> E[Scale select cols & boxplot]
-  E --> F[Decide: keep or remove outliers]
+  A[Detect Nulls] --> B[Check reasons for nulls]
+  B --> C[Mark expected nulls e.g. first year GrowthRate]
+  A --> D[Outlier detection IQR]
+  D --> E[Scale selected columns and boxplot]
+  E --> F[Decide keep or remove outliers]
 ```
 
 ### 3) Feature Engineering
@@ -86,8 +86,8 @@ Mermaid flow:
 ```mermaid
 flowchart LR
   A[Cleaned DF] --> B[Compute Profit]
-  B --> C[Compute Carbon/Energy/Water per Revenue]
-  C --> D[Create ESG_Category (Low/Med/High)]
+  B --> C[Compute Carbon Energy Water per Revenue]
+  C --> D[Create ESG Category Low Medium High]
   D --> E[Feature set ready for modeling and clustering]
 ```
 
@@ -99,10 +99,10 @@ flowchart LR
 Mermaid flow:
 ```mermaid
 flowchart LR
-  A[Feature set] --> B[Pairplot & Correlations]
-  A --> C[GrowthRate boxplots]
-  A --> D[Scatterplots & trends by Year/Industry/Region]
-  B --> E[Insights & recommendations]
+  A[Feature set] --> B[Pairplot and correlations]
+  A --> C[GrowthRate boxplots by Region and Industry]
+  A --> D[Scatterplots and trends by Year Industry Region]
+  B --> E[Insights and recommendations]
 ```
 
 ### 5) Clustering (KMeans segmentation)
@@ -115,10 +115,10 @@ Mermaid flow:
 ```mermaid
 flowchart LR
   A[Feature set] --> B[Select profitable companies]
-  B --> C[Compute Resource_per_Profit + clean inf/NaN]
-  C --> D[KMeans(n_clusters=3)]
-  D --> E[Assign Cluster Labels & Plot]
-  E --> F[Cluster Insights]
+  B --> C[Compute Resource per Profit and clean inf NaN]
+  C --> D[Fit KMeans n clusters 3]
+  D --> E[Assign cluster labels and plot]
+  E --> F[Cluster insights]
 ```
 
 ### 6) Modeling: RandomForest for ESG_Category
@@ -129,10 +129,10 @@ flowchart LR
 Mermaid flow:
 ```mermaid
 flowchart LR
-  A[Feature set (selected cols)] --> B[Drop na & encode labels]
-  B --> C[train_test_split]
+  A[Feature set selected columns] --> B[Drop na and encode labels]
+  B --> C[Train test split 80 20]
   C --> D[Train RandomForest]
-  D --> E[Evaluate: train/test accuracy]
+  D --> E[Evaluate train and test accuracy]
 ```
 
 ### 7) Local explainability (LIME)
@@ -140,14 +140,14 @@ flowchart LR
 - Explain single instances and multiple instances (the notebook provides an instance loop and summary across multiple explanations to compute average absolute LIME weights).
 - Display as HTML table where available and also as Matplotlib figures via `as_pyplot_figure()`.
 
-Mermaid flow (LIME local + aggregate):
+Mermaid flow (LIME local and aggregate):
 ```mermaid
 flowchart TD
-  A[Trained RF model + X_train] --> B[LimeTabularExplainer(training_data=X_train.values)]
-  B --> C[explain_instance(instance, predict_fn=rf_model.predict_proba)]
-  C --> D[Display HTML / pyplot figure]
-  C --> E[Collect as_list() weights for many instances]
-  E --> F[Aggregate mean absolute weights => global LIME summary plot]
+  A[Trained RF model and X_train] --> B[LimeTabularExplainer training data X_train values]
+  B --> C[Explain instance with predict_fn predict_proba]
+  C --> D[Display HTML and pyplot figure]
+  C --> E[Collect as_list weights for many instances]
+  E --> F[Aggregate mean absolute weights global LIME summary plot]
 ```
 
 Notes on LIME usage and gotchas:
