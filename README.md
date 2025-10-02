@@ -1,6 +1,12 @@
 # ESG & Financial Performance — Advanced Analysis
 
-This repository contains a Jupyter Notebook `Copy_of_ESG_&_Financial_Performance_Dataset_V2.ipynb` that performs an end-to-end exploratory data analysis (EDA), feature engineering, modeling, and local explainability (LIME) on a synthetic/company ESG and financial dataset. The notebook is organized into numbered sections; this README summarizes the pipeline, reproduces key commands, documents artifacts, and provides Mermaid.js flowcharts that describe the architecture and data flows.
+# Project members and roll numbers
+
+Prateek Kumar Prasad -(2301420018)-Btech CSE DS sem IV
+Yatharth Chopra -(2301420022)-Btech CSE DS sem IV
+
+
+This repository contains a Jupyter Notebook `Copy_of_ESG_&_Financial_Performance_Dataset_V3.ipynb` that performs an end-to-end exploratory data analysis (EDA), feature engineering, modeling, and local explainability (LIME) on a synthetic/company ESG and financial dataset. The notebook is organized into numbered sections; this README summarizes the pipeline, reproduces key commands, documents artifacts, and provides Mermaid.js flowcharts that describe the architecture and data flows.
 
 ## High-level goals / contract
 - Input: `company_esg_financial_dataset.csv` — tabular dataset containing company ESG metrics (Environmental, Social, Governance pillars), resource usage (Energy, Water, Carbon), and financials (Revenue, ProfitMargin, MarketCap, GrowthRate, Year, Industry, Region, etc.).
@@ -226,25 +232,9 @@ def wrapped_predict_proba(x_arr):
 ---
 
 ## Next steps & improvements
-- Add persistence: save trained RF model and scaler with `joblib.dump` so LIME explanations can be re-run without re-training.
-- Add cross-validation and hyperparameter search for the RandomForest to improve generalization.
-- Consider SHAP for faster and more consistent global explanations (and dependence plots).
-- Add unit tests for data validation steps and a small integration test that runs the notebook pipeline on a tiny sample.
+- We will Add persistence: save trained RF model and scaler with `joblib.dump` so LIME explanations can be re-run without re-training.
+- Will add cross-validation and hyperparameter search for the RandomForest to improve generalization.
+- Will use SHAP for faster and more consistent global explanations (and dependence plots).
+- Add  more unit tests for data validation steps and a small integration test that runs the notebook pipeline on a tiny sample.
 
 ---
-
-## Credits & references
-- LIME: https://github.com/marcotcr/lime
-- ydata_profiling (formerly pandas-profiling): https://github.com/ydataai/ydata-profiling
-- scikit-learn docs: https://scikit-learn.org
-
----
-
-## README authoring note
-This README was generated to match the flow and structure of the notebook `Copy_of_ESG_&_Financial_Performance_Dataset_V2.ipynb` and includes multiple Mermaid.js flowcharts that map directly to the notebook sections. If you'd like, I can:
-
-- Add inline Mermaid diagrams directly into the notebook as Markdown cells.
-- Produce a `requirements.txt` and a small `run_analysis.py` script to run key parts headlessly.
-- Persist trained models and provide a small fast API for on-demand LIME explanations.
-
-If any of these would help, tell me which and I'll add them next.
