@@ -6,7 +6,7 @@
 - Yatharth Chopra -(2301420022)-Btech CSE DS Sem V
 
 
-This repository contains a Jupyter Notebook `Copy_of_ESG_&_Financial_Performance_Dataset_V4.ipynb` that performs an end-to-end exploratory data analysis (EDA), feature engineering, modeling, and local explainability (LIME) on a synthetic/company ESG and financial dataset. The notebook is organized into numbered sections; this README summarizes the pipeline, reproduces key commands, documents artifacts, and provides Mermaid.js flowcharts that describe the architecture and data flows.
+This repository contains a Jupyter Notebook `ESG_&_Financial_Performance_Dataset_V4.ipynb` that performs an end-to-end exploratory data analysis (EDA), feature engineering, modeling, and local explainability (LIME) on a synthetic/company ESG and financial dataset. The notebook is organized into numbered sections; this README summarizes the pipeline, reproduces key commands, documents artifacts, and provides Mermaid.js flowcharts that describe the architecture and data flows.
 
 ## High-level goals / contract
 - Input: `company_esg_financial_dataset.csv` — tabular dataset containing company ESG metrics (Environmental, Social, Governance pillars), resource usage (Energy, Water, Carbon), and financials (Revenue, ProfitMargin, MarketCap, GrowthRate, Year, Industry, Region, etc.).
@@ -200,7 +200,7 @@ pip install --upgrade setuptools
 ---
 
 ## How to run (notebook)
-1. Open `Copy_of_ESG_&_Financial_Performance_Dataset_V2.ipynb` in Jupyter or VS Code.
+1. Open `ESG_&_Financial_Performance_Dataset_V4.ipynb` in Jupyter or VS Code.
 2. Ensure the dataset `company_esg_financial_dataset.csv` is in the same folder (or update the path in the notebook cell that loads the CSV).
 3. Run the cells sequentially. If you hit long-running steps (profiling or running LIME many times), interrupt and try a smaller sample size.
 
