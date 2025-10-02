@@ -2,8 +2,8 @@
 
 # Project members and Roll numbers
 
-- Prateek Kumar Prasad -(2301420018)-Btech CSE DS sem IV
-- Yatharth Chopra -(2301420022)-Btech CSE DS sem IV
+- Prateek Kumar Prasad -(2301420018)-Btech CSE DS Sem V
+- Yatharth Chopra -(2301420022)-Btech CSE DS Sem V
 
 
 This repository contains a Jupyter Notebook `Copy_of_ESG_&_Financial_Performance_Dataset_V3.ipynb` that performs an end-to-end exploratory data analysis (EDA), feature engineering, modeling, and local explainability (LIME) on a synthetic/company ESG and financial dataset. The notebook is organized into numbered sections; this README summarizes the pipeline, reproduces key commands, documents artifacts, and provides Mermaid.js flowcharts that describe the architecture and data flows.
